@@ -1,0 +1,41 @@
+
+var geometry = require('users/pinkychow1010/GEE:mangrove_case').getGeometry();
+
+// Import the dataset and select the elevation band.
+var dataset = ee.Image('NASA/NASADEM_HGT/001');
+var elevation = dataset.select('elevation');
+
+// Set elevation visualization properties.
+var elevationVis = {
+  min: 0,
+  max: 20,
+  palette: ['00FFFF', '0000FF']
+};
+
+// Set elevation and add to the map.
+Map.addLayer(elevation, elevationVis, 'Elevation');
+
+Map.addLayer(geometry);
+Map.centerObject(geometry, 10);
+
+var out = elevation.clip(geometry);
+
+Export.image.toDrive({
+  image: out,
+  description: 'NASADEM',
+  region: geometry
+});
+
+// var dataset = ee.Image('MERIT/Hydro/v1_0_1');
+
+// Map.addLayer(site)
+// Map.setOptions("Hybrid")
+
+// var visualization = {
+//   bands: ['upa'],
+//   min: 0,
+//   max: 2000,
+//   palette: ['white','blue']
+// };
+
+// Map.addLayer(dataset.clip(geometry), visualization, 'River Upstream Drainage Area');
