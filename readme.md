@@ -18,9 +18,10 @@ The areas of notable change predominantly locates in the northern part of the si
 <br>
 
 **Task 2: Flood Risk Assessment**
-![study workflow](mangrove-risk-assessment.png)
 
 NASADEM is a suitable dataset for assessing potential flood risk of mangrove, owing to its high spatial resolution and creditable quality. Limitations lie in the data precision, as sea level risk modelling requires highly precise elelvation data. Other alternative includes DeltaDTM.
+
+<img src="mangrove-risk-assessment.png" alt="workflow" width="550"/>
 
 In summary, the mangrove at the study site are highly exposed to sea-level rise, with around half of the mangrove risk to be flooded in a scanerio with 1 meter sea level rise.
 
